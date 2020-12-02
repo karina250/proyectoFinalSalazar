@@ -1,0 +1,74 @@
+<div *ngIf="!estado">
+    <nav class="navbar navbar-light" style="background-color:rgb(27, 110, 187)">
+        <h2 class="">Profesores</h2>
+
+    </nav>
+    <div id="" class="row">
+        <div>
+
+        </div>
+        <div class="col-3">
+            <form (ngSubmit)="registrar( f )" #f="ngForm">
+                <div class="form-group ">
+                    <label>id_Profesor</label>
+                    <input disabled type="text " class="form-control " [(ngModel)]="profesor._id" name="_id" placeholder="uid">
+                </div>
+                <div class="form-group ">
+                    <label>NOMBRE</label>
+                    <input type="text " class="form-control " [(ngModel)]="profesor.nombre" name="nombre" placeholder="nombre">
+                </div>
+                <div class="form-group ">
+                    <label>APELLIDO</label>
+                    <input type="text " class="form-control " [(ngModel)]="profesor.apellido" name="apellido" placeholder="apellido">
+                </div>
+                <div class="form-group ">
+                    <label>DIRECCION</label>
+                    <input type="text " class="form-control " [(ngModel)]="profesor.direccion" name="direccion" placeholder="direccion">
+                </div>
+                <div class="form-group ">
+                    <label>TELEFONO</label>
+                    <input type="text " class="form-control " [(ngModel)]="profesor.telefono" name="telefono" placeholder="telefono">
+                </div>
+                <div class="form-group ">
+                    <label>CURSO</label>
+                    <input type="text " class="form-control " [(ngModel)]="profesor.curso" name="curso" placeholder="curso">
+                </div>
+
+                <button type="submit" class="btn btn-outline-dark" type="">Registrar!</button>
+
+
+            </form>
+        </div>
+        <div class="col-6">
+            <table class="table table-hover table-dark ">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NOMBRES</th>
+                        <th scope="col">APELLIDOS</th>
+                        <th scope="col">DIRECCION</th>
+                        <th scope="col">TELEFONO</th>
+                        <th scope="col">CURSO</th>
+                        <th scope="col">ELIMINAR</th>
+                        <th scope="col">ACTUALIZAR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let profesor of profesores; let i=index">
+                        <td>{{profesor._id}}</td>
+                        <td>{{profesor.nombre}}</td>
+                        <td>{{profesor.apellido}}</td>
+                        <td>{{profesor.direccion}}</td>
+                        <td>{{profesor.telefono}}</td>
+                        <td>{{profesor.curso}}</td>
+                        <td><button class="btn btn-danger" (click)="eliminar(profesor,i)">ELIMINAR</button></td>
+                        <td><button class="btn btn-warning" (click)="editar(profesor)">ACTUALIZAR</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+</div>

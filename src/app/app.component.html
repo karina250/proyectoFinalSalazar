@@ -1,0 +1,10 @@
+<nav class="navbar navbar-dark bg-dark " style="background-color: #e3f2fd;">
+    <button class="btn btn-outline-light btn-lg btn-block">Iniciar Sesion</button>
+    <button class="btn btn-outline-light btn-lg btn-block" (click)="estado=!estado">Registro de Alumnos</button>
+    <button class="btn btn-outline-light btn-lg btn-block" (click)="estado2=!estado2">Registro de Profesores</button>
+</nav>
+
+<app-alumno [estado]="estado"></app-alumno>
+<app-profesor [estado]="estado2"></app-profesor>
+
+<app-footer></app-footer>

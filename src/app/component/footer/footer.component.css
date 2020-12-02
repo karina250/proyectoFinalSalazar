@@ -1,0 +1,9 @@
+div.row {
+    background-color: rgb(3, 40, 75);
+    margin-top: 1.5em;
+}
+
+div.col-3 {
+    padding-top: 3em;
+    color: rgb(239, 240, 230);
+}
